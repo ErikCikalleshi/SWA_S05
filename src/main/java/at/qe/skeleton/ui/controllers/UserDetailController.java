@@ -2,6 +2,8 @@ package at.qe.skeleton.ui.controllers;
 
 import at.qe.skeleton.model.Userx;
 import at.qe.skeleton.services.UserxService;
+
+import java.io.IOException;
 import java.io.Serializable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -64,7 +66,7 @@ public class UserDetailController implements Serializable {
     /**
      * Action to delete the currently displayed user.
      */
-    public void doDeleteUser() {
+    public void doDeleteUser() throws IOException {
         this.userService.deleteUser(user);
         user = null;
     }

@@ -19,5 +19,21 @@
                 </button>
             </h:panelGrid>
         </form>
+<!--        display only when param.error is set-->
+        <h:panelGroup rendered="#{param.error}">
+            <div class="ui-messages ui-widget" value="#{param.error}">
+                <div class="ui-messages-error ui-corner-all">
+                    <span class="ui-messages-error-icon"></span>
+                    <ul>
+                        <li><span class="ui-messages-error-summary">Invalid username or password</span></li>
+                    </ul>
+                </div>
+            </div>
+        </h:panelGroup>
+
+
+
+
     </ui:define>
+
 </ui:composition>

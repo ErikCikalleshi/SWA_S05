@@ -1,9 +1,7 @@
 package at.qe.skeleton.model;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -50,6 +48,10 @@ public class Userx implements Persistable<String>, Serializable, Comparable<User
     private String phone;
 
     boolean enabled;
+
+    private String deleted = null;
+
+    private Date deletedDate = null;
 
     @ElementCollection(targetClass = UserxRole.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "Userx_UserxRole")
@@ -118,6 +120,22 @@ public class Userx implements Persistable<String>, Serializable, Comparable<User
 
     public void setRoles(Set<UserxRole> roles) {
         this.roles = roles;
+    }
+
+    public String getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(String deleted) {
+        this.deleted = deleted;
+    }
+
+    public Date getDeletedDate() {
+        return deletedDate;
+    }
+
+    public void setDeletedDate(Date deletedDate) {
+        this.deletedDate = deletedDate;
     }
 
     public Userx getCreateUser() {

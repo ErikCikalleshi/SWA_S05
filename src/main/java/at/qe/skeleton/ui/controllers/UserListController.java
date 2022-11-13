@@ -30,4 +30,12 @@ public class UserListController implements Serializable {
         return userService.getAllUsers();
     }
 
+    /**
+     * Returns a list of all delted users.
+     *
+     * @return
+     */
+    public Collection<Userx> getDeletedUsers() {
+        return userService.getAllDeletedUsers();
+    }
 }
